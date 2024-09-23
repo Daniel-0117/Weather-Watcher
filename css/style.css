@@ -1,0 +1,19 @@
+html {
+    line-height: 1.15;
+}
+
+body {
+    margin: 0;
+    background-image: url("../imgs/bg-img.jpg");
+}
+
+h1 {
+    font-size: 3em;
+
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+}
