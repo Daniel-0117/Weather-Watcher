@@ -16,4 +16,22 @@ header {
     background-color: #333;
     color: white;
     padding: 1em;
+    text-align: end;
+    font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
+}
+
+.search {
+    color: white;
+    position: fixed, top: 0, left: 0;
+    padding: 1em;
+    text-align: left;
+    font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
+}
+
+.weather-report {
+    color: white;
+    position: fixed, top: 0, right: 0;
+    padding: 1em;
+    text-align: center;
+    font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
 }
