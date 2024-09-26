@@ -14,35 +14,39 @@
 </head>
 <body>
     <header 
-    style="conainer-fluid text-center text-white bg-dark p-2 fontsize-20"
+    class="container-fluid text-center text-white bg-dark p-2 fontsize-20"
     >
         <h1 class="weather-title">My Weather Watcher</h1>
     </header>
 
-    <!-- Div responisble for the search bar -->
-    <div class="search">
-        <div class="row">
-            <div class="col-md-6 offset-md-3 form-wrapper">
-                <h2 class="text-center">Search for a City</h2>
-                <form action="" method="post" class="form">
-                    <div class="mb-3">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" name="city" id="city" class="form-control" placeholder="Tucson">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+    <!-- div acting as parent for all containers -->
+     <div class="flex-container">
+        <!-- Div responisble for the search bar -->
+        <div class="search">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 form-wrapper">
+                    <h2 class="text-center">Search for a City</h2>
+                    <form action="" method="post" class="form">
+                        <div class="mb-3">
+                            <label for="city" class="form-label">City</label>
+                            <input type="text" name="city" id="city" class="form-control" placeholder="Tucson">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
             </div>
+
+            <!-- Section responsible for the weather report -->
+        <div>
+            <div class="weather-report">
+                    <h2 class="text-center">Weather Report</h2>
+            </div>
+            <!-- div responsible for presenting a five day forecast -->
+        <div class="fiveday">
+                <h2 class="text-center">Five Day Forecast</h2>
+            </div>    
+
         </div>
-
-        <!-- Section responsible for the weather report -->
-    <div>
-        <div class="weather-report">
-            <h2 class="text-center">Weather Report</h2>
-    </div>
-
-    <div class="fiveday">
-        <h2 class="text-center">Five Day Forecast</h2>
-    </div>    
 
     
         <!-- day.js  -->
@@ -64,4 +68,7 @@
     <script src="script.js"></script>
     <script src="./js/script.js"></script>
 </body>
+<footer>
+    
+</footer>
 </html>

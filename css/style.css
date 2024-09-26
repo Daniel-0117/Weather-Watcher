@@ -20,9 +20,17 @@ header {
     font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
 }
 
+.flex-container {
+    display: flex;
+    /* flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1em; */
+}
+
 .search {
     color: white;
-    position: fixed, top: 0, left: 0;
+    position: fixed; top: 5; left: 0;
     padding: 1em;
     text-align: left;
     font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
@@ -30,7 +38,7 @@ header {
 
 .weather-report {
     color: white;
-    position: fixed, top: 0, right: 0;
+    position: fixed; top: 1; right: 0;
     padding: 1em;
     text-align: center;
     font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
