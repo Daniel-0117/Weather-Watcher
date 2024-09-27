@@ -8,9 +8,14 @@ body {
 }
 
 h1 {
-    font-size: 3em;
-
+    font-size: 4em;
 }
+
+h2 {
+    font-size: 2.5em;
+}
+
+
 
 header {
     background-color: #333;
@@ -22,45 +27,34 @@ header {
 
 .flex-container {
     display: flex;
-    flex-direction: row;
     width: 100%;
-    height: auto;
-    /* flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 1em; */
+    height: 74.5vh; /* Set the height of the flex container */
+    /* Let the height be determined by the content or set a specific height */
 }
 
 .search {
-    color: black;
-    background: white, opacity 0.2;
-
-    /* position: fixed; top: 5; left: 0; */
-    display: inline-block;
-    width: 25%;
-    height: 100%;
-    /* padding: 1em; */
-    text-align: left;
-    font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
-}
-
-.weather-report {
     color: white;
-    /* position: fixed; top: 1; right: 0; */
+    background: rgba(255,255,255, 0.4);
     display: inline-block;
-    width: 75%;
-    /* padding: 1em; */
+    width: 18%; /* Fixed width for the search box */
     text-align: center;
     font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
 }
 
-.fiveday {
+.reportBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content */
+    align-items: center; /* Horizontally centers content */
+    text-align: center;
+    flex-grow: 1; /* Allows it to take up the remaining space */
+    min-height: 20em; /* Set a minimum height for .reportBox */
+    background-color: rgba(0, 0, 0, 0.2); /* Optional background for visual testing */
+}
+
+.weather-report, .fiveday {
     color: white;
-    /* position: fixed; top: 1; right: 0; */
     width: 100%;
-    position: fixed;
-    bottom: 20%;
-    /* padding: 1em; */
     text-align: center;
     font-family: 'bubblegum-sans', 'Times New Roman', Times, serif;
 }
