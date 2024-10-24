@@ -3,39 +3,52 @@ const weatherUrl = "https://api.openweathermap.org";
 const weatherHistory = [];
 
 // Grabs DOM Elements
-
-const searchInput = document.getElementById("search-input");
-const searchButton = document.getElementById("search-button");
+const searchInput = document.getElementById("city"); // Update to match your HTML
+const searchButton = document.querySelector("button[type='submit']"); // Grabbing the submit button
 const weatherDisplay = document.getElementById("weather-display");
 const weatherHistoryDisplay = document.getElementById("weather-history-display");
 
-// Event Listeners
+// Check if elements are found
+console.log(searchInput); // Check if the element exists
+console.log(searchButton); // Check if the button exists
 
-//Inserts boxs with the weather data
-searchButton.addEventListener("click", function () {
+// Event Listeners
+searchButton.addEventListener("click", function (event) {
+  event.preventDefault(); // Prevent the form from submitting and refreshing the page
+  console.log("Search Button Clicked!"); // Log to check if clicked
   const searchValue = searchInput.value;
   getWeather(searchValue);
 });
 
-//Function to fetch and display the weather data
+// Function to fetch and display the weather data
 async function getWeather(city) {
   try {
-    const response = await fetch(`${weatherUrl}/data/2.5/weather?q=${city}&appid=${weatherKey}&units=imperial`);
+    const url = `${weatherUrl}/data/2.5/weather?q=${city}&appid=${weatherKey}&units=imperial`;
+    console.log("Request URL:", url); // Log the full URL
+
+    const response = await fetch(url, {
+      method: 'GET'
+    });
+
+    console.log("Response Status:", response.status); // Log the response status
+    console.log("Response:", response); // Log the full response object
+
     if (response.ok) {
       const data = await response.json();
-      renderWeather(data); // pass the waeather data to the renderWeather function
-      weatherHistory.push(data); // push the data to the weatherHistory array
-      renderWeatherHistory(); // call the renderWeatherHistory function
-
+      renderWeather(data);
+      weatherHistory.push(data);
+      renderWeatherHistory();
     } else {
-      alert("City not found");
+      const errorData = await response.json();
+      console.error("Error Data:", errorData); // Log error data
+      alert(`Error: ${errorData.message}`);
     }
   } catch (error) {
-    console.error("Error catching weather data", error);
+    console.error("Error fetching weather data", error);
   }
 }
 
-//Function to render the weather data
+// Function to render the weather data
 function renderWeather(weatherData) {
   const weatherBox = document.createElement("div");
   weatherBox.classList.add("weather-box");
@@ -48,7 +61,7 @@ function renderWeather(weatherData) {
   weatherDisplay.appendChild(weatherBox);
 }
 
-//Function to render the weather history
+// Function to render the weather history
 function renderWeatherHistory() {
   weatherHistoryDisplay.innerHTML = "";
   weatherHistory.forEach((weatherData) => {
@@ -63,4 +76,3 @@ function renderWeatherHistory() {
     weatherHistoryDisplay.appendChild(weatherBox);
   });
 }
-
